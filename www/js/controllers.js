@@ -11,11 +11,12 @@ angular.module('starter.controllers', [])
   $scope.friend = Friends.get($stateParams.friendId);
 })
 
-.controller('AccountCtrl', function($scope, $stateParams, ItemsService) {
+.controller('AccountCtrl', function($scope, $stateParams, $filter, ItemsService) {
  
   $scope.accountId = $stateParams.accountId;
 
   $scope.items = ItemsService.getItems();
+
 
   $scope.types = ['Repair', 'Maint', 'Storm']; 
 
