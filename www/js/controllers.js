@@ -11,10 +11,9 @@ angular.module('starter.controllers', [])
   $scope.friend = Friends.get($stateParams.friendId);
 })
 
-.controller('AccountCtrl', function($scope, ItemsService) {
-  //$scope.newItem = { Name: '', Total: 0, Jan: 0, Feb: 0, Mar: 0, Apr: 0, May: 0, Jun: 0, 
-  //  Jul:0, Aug: 0, Sep: 0, Oct: 0, Nov: 0, Dec: 0 };
-  //$scope.currentItem = null;
+.controller('AccountCtrl', function($scope, $stateParams, ItemsService) {
+ 
+  $scope.accountId = $stateParams.accountId;
 
   $scope.items = ItemsService.getItems();
 
@@ -22,11 +21,12 @@ angular.module('starter.controllers', [])
 
   $scope.addItem = function () {
     ItemsService.addItem(angular.copy($scope.newItem));
-    $scope.newItem = { Type: '', Total: 0, Jan: 0, Feb: 0, Mar: 0, Apr: 0, May: 0, Jun: 0, 
+    $scope.newItem = { AccountId: $scope.accountId, Type: '', Total: 0, Jan: 0, Feb: 0, Mar: 0, Apr: 0, May: 0, Jun: 0, 
     Jul:0, Aug: 0, Sep: 0, Oct: 0, Nov: 0, Dec: 0 };
   };
 
   $scope.updateItem = function (id) {
+      $scope.items[id].AccountId = $scope.accountId;
       //Update totals before doing update 
       $scope.items[id].Total = 
         parseInt($scope.items[id].Jan) + parseInt($scope.items[id].Feb) + parseInt($scope.items[id].Mar) +
