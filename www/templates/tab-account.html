@@ -1,0 +1,52 @@
+<ion-view title="Account">
+  <ion-content class="has-header padding">
+  <ion-list>
+    <!-- Header Row -->
+    <div class="row">
+    <ion-item class="col-20">Type</ion-item>
+    <ion-item class="col">Total</ion-item>
+    <ion-item class="col">Jan</ion-item>
+    <ion-item class="col">Feb</ion-item>
+    <ion-item class="col">Mar</ion-item>
+    <ion-item class="col">Apr</ion-item>
+    <ion-item class="col">May</ion-item>
+    <ion-item class="col">Jun</ion-item>
+    <ion-item class="col">Jul</ion-item>
+    <ion-item class="col">Aug</ion-item>
+    <ion-item class="col">Sep</ion-item>
+    <ion-item class="col">Oct</ion-item>
+    <ion-item class="col">Nov</ion-item>
+    <ion-item class="col">Dec</ion-item>
+    <ion-item class="col">Action</ion-item>
+    </div>
+
+    
+
+
+    <!-- Items -->
+    <div class="row" ng-repeat="(id, item) in items">
+      <ion-item class="item-input item-select col-20">
+        <select ng-model="item.Type" ng-options="type for type in types"></select>
+      </ion-item>
+      <ion-item class="col">{{item.Total}}</ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Jan" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Feb" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Mar" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Apr" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.May" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Jun" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Jul" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Aug" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Sep" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Oct" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Nov" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Dec" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"> <button ng-click="removeItem(id)" class="navbar-link">Del</button></ion-item>
+    </div>
+
+  </ion-list>  
+   
+    <button ng-click="addItem()" class="btn btn-default">Add</button>
+
+  </ion-content>
+</ion-view>
