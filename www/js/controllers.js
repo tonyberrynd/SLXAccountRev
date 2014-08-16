@@ -21,13 +21,13 @@ angular.module('starter.controllers', [])
   $scope.types = ['Repair', 'Maint', 'Storm']; 
 
   $scope.addItem = function () {
-    ItemsService.addItem(angular.copy($scope.newItem));
     $scope.newItem = { AccountId: $scope.accountId, Type: '', Total: 0, Jan: 0, Feb: 0, Mar: 0, Apr: 0, May: 0, Jun: 0, 
     Jul:0, Aug: 0, Sep: 0, Oct: 0, Nov: 0, Dec: 0 };
+    ItemsService.addItem(angular.copy($scope.newItem));
   };
 
   $scope.updateItem = function (id) {
-      $scope.items[id].AccountId = $scope.accountId;
+      //$scope.items[id].AccountId = $scope.accountId;
       //Update totals before doing update 
       $scope.items[id].Total = 
         parseInt($scope.items[id].Jan) + parseInt($scope.items[id].Feb) + parseInt($scope.items[id].Mar) +

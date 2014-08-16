@@ -24,24 +24,24 @@
 
     <!-- Items -->
 
-    <div class="row" ng-repeat="(id,item) in items | orderByPriority | filter: { AccountId : accountId }" >
+    <div class="row" ng-repeat="item in items | orderByPriority | filter: { AccountId : accountId }" >
       <ion-item class="item-input item-select col-20">
         <select ng-model="item.Type" ng-options="type for type in types"></select>
       </ion-item>
       <ion-item class="col">{{item.Total}}</ion-item>
       
-      <ion-item class="col"><input type="text" ng-model="item.Jan" ng-blur="updateItem(id)"/></ion-item>
-      <ion-item class="col"><input type="text" ng-model="item.Feb" ng-blur="updateItem(id)"/></ion-item>
-      <ion-item class="col"><input type="text" ng-model="item.Mar" ng-blur="updateItem(id)"/></ion-item>
-      <ion-item class="col"><input type="text" ng-model="item.Apr" ng-blur="updateItem(id)"/></ion-item>
-      <ion-item class="col"><input type="text" ng-model="item.May" ng-blur="updateItem(id)"/></ion-item>
-      <ion-item class="col"><input type="text" ng-model="item.Jun" ng-blur="updateItem(id)"/></ion-item>
-      <ion-item class="col"><input type="text" ng-model="item.Jul" ng-blur="updateItem(id)"/></ion-item>
-      <ion-item class="col"><input type="text" ng-model="item.Aug" ng-blur="updateItem(id)"/></ion-item>
-      <ion-item class="col"><input type="text" ng-model="item.Sep" ng-blur="updateItem(id)"/></ion-item>
-      <ion-item class="col"><input type="text" ng-model="item.Oct" ng-blur="updateItem(id)"/></ion-item>
-      <ion-item class="col"><input type="text" ng-model="item.Nov" ng-blur="updateItem(id)"/></ion-item>
-      <ion-item class="col"><input type="text" ng-model="item.Dec" ng-blur="updateItem(id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Jan" ng-blur="updateItem(item.$id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Feb" ng-blur="updateItem(item.$id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Mar" ng-blur="updateItem(item.$id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Apr" ng-blur="updateItem(item.$id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.May" ng-blur="updateItem(item.$id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Jun" ng-blur="updateItem(item.$id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Jul" ng-blur="updateItem(item.$id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Aug" ng-blur="updateItem(item.$id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Sep" ng-blur="updateItem(item.$id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Oct" ng-blur="updateItem(item.$id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Nov" ng-blur="updateItem(item.$id)"/></ion-item>
+      <ion-item class="col"><input type="text" ng-model="item.Dec" ng-blur="updateItem(item.$id)"/></ion-item>
       <ion-item class="col"> <button ng-click="removeItem(id)" class="navbar-link">Del</button></ion-item>
     </div>
 
