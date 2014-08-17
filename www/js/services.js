@@ -1,6 +1,6 @@
 angular.module('starter.services', ['firebase'])
 
-.constant('FIREBASE_URI', 'https://tabletest.firebaseio.com/')
+.constant('FIREBASE_URI', 'https://slxaccountrevenue.firebaseio.com/')
 /**
  * A simple example service that returns some data.
  */
@@ -28,11 +28,14 @@ angular.module('starter.services', ['firebase'])
 
 
 .factory('ItemsService',  function ($firebase, FIREBASE_URI) {
-    var ref = new Firebase(FIREBASE_URI);
-    var items = $firebase(ref);
-
-    var getItems = function () {
-        return items;
+      var ref = {};
+      var items = {};
+    
+    
+    var getItems = function (accountId){
+      ref = new Firebase(FIREBASE_URI).child(accountId);
+      items = $firebase(ref);
+      return items;
     };
 
     var addItem = function (item) {

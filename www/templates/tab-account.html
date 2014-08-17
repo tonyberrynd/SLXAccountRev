@@ -24,12 +24,11 @@
 
     <!-- Items -->
 
-    <div class="row" ng-repeat="item in items | orderByPriority | filter: { AccountId : accountId }" >
+    <div class="row" ng-repeat="item in items | orderByPriority " >
       <ion-item class="item-input item-select col-20">
         <select ng-model="item.Type" ng-options="type for type in types"></select>
       </ion-item>
       <ion-item class="col">{{item.Total}}</ion-item>
-      
       <ion-item class="col"><input type="text" ng-model="item.Jan" ng-blur="updateItem(item.$id)"/></ion-item>
       <ion-item class="col"><input type="text" ng-model="item.Feb" ng-blur="updateItem(item.$id)"/></ion-item>
       <ion-item class="col"><input type="text" ng-model="item.Mar" ng-blur="updateItem(item.$id)"/></ion-item>
