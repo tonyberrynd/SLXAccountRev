@@ -28,13 +28,12 @@ angular.module('starter.services', ['firebase'])
 
 
 .factory('ItemsService',  function ($firebase, FIREBASE_URI) {
-      var ref = {};
-      var items = {};
-    
+    var ref = {};
+    var items = [];    
     
     var getItems = function (accountId){
       ref = new Firebase(FIREBASE_URI).child(accountId);
-      items = $firebase(ref);
+      items = $firebase(ref).$asArray();
       return items;
     };
 
