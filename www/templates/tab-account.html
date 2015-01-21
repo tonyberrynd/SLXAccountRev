@@ -1,5 +1,15 @@
 <ion-view title="Revenues - {{accountId}}">
   <ion-content class="has-header padding">
+   <div class="row">
+        <div class="col">
+          <h4>2014 Revenues</h4>
+          <canvas linechart options="data.chartOptions" data="data.lineChart"></canvas>
+        </div>  
+        <div class="col">
+            <h4>Revenue By Type</h4>
+           <canvas donutchart legend=true options="data.chartOptions" data="data.chartData"></canvas>
+        </div>     
+    </div> 
   <ion-list>
     <!-- Header Row -->
     <div class="row">
@@ -64,15 +74,6 @@
    
     <button ng-click="addItem()" class="btn btn-default">Add</button>
 
-    <div class="row">
-        <div class="col">
-          <h4>2014 Revenues</h4>
-          <canvas linechart options="data.chartOptions" data="data.lineChart"></canvas>
-        </div>  
-        <div class="col">
-            <h4>Revenue By Type</h4>
-           <canvas donutchart options="data.chartOptions" data="data.chartData"></canvas>
-        </div>     
-    </div>  
+    
   </ion-content>
 </ion-view>
